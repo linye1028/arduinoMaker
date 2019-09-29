@@ -22,17 +22,18 @@
 #define M0 0
 unsigned int song[28]={M5,M5,M6,M5,H1,M7,
                        M5,M5,M6,M5,H2,
-                       L1,M5,M5,H5,H3,H1,M7,M6,M0,M0,H4,H4,
+                       H1,M5,M5,H5,H3,H1,M7,M6,M0,M0,H4,H4,
                        H3,H1,H2,H1,H1
                       };
 unsigned char time1[28]={1,1,2,2,2,4,
 					   1,1,2,2,2,
-					   2,1,1,2,2,2,2,4,2,2,1,1,
-					   1,1,1,6,6,
+					   4,1,1,2,2,2,2,4,2,2,1,1,
+					   2,2,2,6,6,
 					  };
 void setup() {
 	// put your setup code here, to run once:
 	pinMode(8,OUTPUT);
+  tone(8,song[0]);
 }
 unsigned song_i=0;
 unsigned long preMs=0;
@@ -42,13 +43,19 @@ void loop() {
 	{
 		noTone(8);
 		preMs=millis();
-		if(song[song_i]!=M0)  
+    song_i++;
+		if(song[song_i]!=M0) 
+		{
+			delay(50);
 			tone(8,song[song_i]);
-		song_i++;
+		} 
+			
+		
 		if(song_i>=28)
 		{
+      noTone(8);
 			song_i=0; 
-			noTone(8);
+			tone(8,song[song_i]);
 		}
 	}
 }

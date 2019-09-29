@@ -22,13 +22,13 @@
 #define M0 0
 unsigned int song[28]={M5,M5,M6,M5,H1,M7,
                        M5,M5,M6,M5,H2,
-                       L1,M5,M5,H5,H3,H1,M7,M6,M0,M0,H4,H4,
+                       H1,M5,M5,H5,H3,H1,M7,M6,M0,M0,H4,H4,
                        H3,H1,H2,H1,H1
                       };
 unsigned char time1[28]={1,1,2,2,2,4,
 					   1,1,2,2,2,
-					   2,1,1,2,2,2,2,4,2,2,1,1,
-					   1,1,1,6,6,
+					   4,1,1,2,2,2,2,4,2,2,1,1,
+					   2,2,2,6,6,
 					  };
 void setup() {
 	// put your setup code here, to run once:
